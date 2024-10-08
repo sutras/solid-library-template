@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     target: "esnext",
   },
-  base: "/solid-fast-marquee-docs/",
+  base: "/your-library-name-docs/",
   resolve: {
     alias: [
       {
@@ -26,5 +26,11 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "src"),
       },
     ],
+  },
+  test: {
+    include: ["**/tests/*.spec.*", "**/tests/*.test.*"],
+    globals: true,
+    setupFiles: "./vitest-setup.ts",
+    environment: "jsdom",
   },
 });
