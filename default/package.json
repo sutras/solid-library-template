@@ -23,6 +23,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-typescript": "^7.24.7",
     "@solidjs/router": "^0.14.7",
+    "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.5.0",
     "@types/node": "^22.7.4",
     "babel-preset-solid": "^1.9.0",
