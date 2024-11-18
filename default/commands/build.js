@@ -5,7 +5,7 @@ import path from "node:path";
 import child_process from "node:child_process";
 import { glob } from "glob";
 
-const srcDir = path.resolve(process.cwd(), "src");
+const srcDir = path.resolve(process.cwd(), "src/components");
 const tempDir = path.resolve(process.cwd(), "temp");
 const libDir = path.resolve(process.cwd(), "lib");
 
@@ -100,7 +100,7 @@ async function copyOthers() {
   const files = await glob(srcDir + "/**/*", {
     ignore: {
       ignored(p) {
-        return /\.(?:tsx|ts)$/.test(p);
+        return p.isDirectory() || /\.(?:tsx|ts)$/.test(p.fullpath());
       },
     },
   });
